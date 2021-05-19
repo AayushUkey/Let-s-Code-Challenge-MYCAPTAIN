@@ -1,0 +1,179 @@
+#include<stdio.h>
+#include<conio.h>
+int pass=12345 ,word ,chn;
+int menu();
+void deposite();
+void withdraw();
+void transfer();
+void checkdetail();
+void last();
+int totalamount=1000,amount,amo,tr,totaldeposit=0,totalwithdraw=0,totaltr=0;
+int acc;
+char a[6];
+void main()
+{
+	printf("Enter the Password for access to your Account(pass is 12345) : ");
+	scanf("%d",&word);
+	if(word==pass)
+	{
+		printf("\n\nCorrect password you have Access :::\nPlease press any key to continue\n");
+		getch();
+		system("cls");
+printf("Enet your name : ");
+scanf("%s",&a);
+printf("Enetr your Account Number : ");
+scanf("%d",&acc);
+while(1)
+ {
+	    switch(menu())
+	    {
+	    	   case 1:
+	    	   	       deposit();
+	    	   	       totaldeposit+=amount;
+	    	   	       break;
+	    	   case 2:
+	    	   		   withdraw();
+	    	   		   if(amo<=totalamount)
+	    	   		           totalwithdraw+=amo;
+	    	   		   break;
+	    	   case 3:
+	    	   		   transfer();
+	    	   		   if(tr<=totalamount)
+	    	   		          totaltr+=tr;
+	    	   		   break;
+	    	   case 4:
+	    	   		   checkdetail();
+	    	   		   break;
+	    	   case 5:
+	    	   		   system("cls");
+	    	   		   last();
+	    	   		   getch();
+	    	   		   system("cls");
+	    	   		   exit(0);
+	    	   default:
+	    	   	       printf("\nInvalid Choice>:");
+		}
+		 system("cls");
+ }
+                getch();}
+                else
+				{
+					    printf("If you want to retry...press 1 else press zero");
+				        scanf("%d",&chn);
+				        if(chn==1)
+				        {
+				        	    printf("Enter the Password for Access to your Account(pass is 12345) : ");
+				        	    scanf("%d",&word);
+				        	    if(word==pass)
+				        	    {
+				        	    	printf("\n\nCorrect Password you have Access :::\nPlease press any key to continue\n");
+				        	    	getch();
+				        	    	system("cls");
+				        	    	printf("Enter your name : ");
+scanf("%s",&a);
+printf("Enetr your Account Number : ");
+scanf("%d",&acc);
+while(1)
+ {
+	    switch(menu())
+	    {
+	    	   case 1:
+	    	   	       deposit();
+	    	   	       totaldeposit+=amount;
+	    	   	       break;
+	    	   case 2:
+	    	   		   withdraw();
+	    	   		   if(amo<=totalamount)
+	    	   		           totalwithdraw+=amo;
+	    	   		   break;
+	    	   case 3:
+	    	   		   transfer();
+	    	   		   if(tr<=totalamount)
+	    	   		          totaltr+=tr;
+	    	   		   break;
+	    	   case 4:
+	    	   		   checkdetail();
+	    	   		   break;
+	    	   case 5:
+	    	   		   system("cls");
+	    	   		   last();
+	    	   		   getch();
+	    	   		   system("cls");
+	    	   		   exit(0);
+	    	   default:
+	    	   	       printf("\nInvalid Choice>:");
+		}
+		 system("cls");
+ }
+                getch();
+                     	}
+                     	else
+                     	printf("\nPassword Incorrect:PRESS ANY KEY TO EXIT");
+                     	getch();
+                     	close();
+			    }
+			    else
+			    close();
+			    }               
+}
+
+int menu()
+{
+	    int ch;
+	    printf("\n\n\n1. Deposit Amount : ");
+	    printf("\n2. Withdrawl Amount : ");
+	    printf("\n3. Transfer Amount : ");
+	    printf("\n4. Check Details : ");
+	    printf("\n5. EXIT : ");
+	    printf("\n Enter Your choice : ");
+	    scanf("%d",&ch);
+	    return(ch);
+}
+
+void deposit()
+{
+	    printf("\nEnter the Amount you want to enter : ");
+	    scanf("%d",&amount);
+	    totalamount=totalamount+amount;
+}
+
+void withdraw()
+{
+	    printf("\nEnter the amount you want to withdraw : ");
+	    scanf("%d",&amo);
+	    if(amo<=totalamount)
+	            totalamount=totalamount-amo;
+	    else
+	            printf("\nLess Amount.Withdraw not possible.");
+}
+
+void transfer()
+{
+	    printf("\nEnter the amount you want to transfer : ");
+	    scanf("%d",&tr);
+	    if(tr<=totalamount)
+	           totalamount=totalamount-tr;
+	    else
+	           printf("\nLess Amount.Transfer not possible.");
+}
+
+void checkdetail()
+{
+	    system("cls");
+	    printf("\n\nTotal amount = %d",totalamount);
+	    printf("\nTotal deposited amount = %d",totaldeposit);
+	    printf("\nTotal withdrawed amount = %d",totalwithdraw);
+	    printf("\nTotal transfered amount = %d\n\n",totaltr);
+	    getch();
+}
+
+void last()
+{
+	    printf("\nName =%s",a);
+	    printf("\nAccount Number =%d",acc);
+	    printf("\nTotal Amount =%d",totalamount);
+	    printf("\nTotal deposited amount =%d",totaldeposit);
+	    printf("\nTotal Withdrawed amount =%d",totalwithdraw);
+	    printf("\nTotal Transfered amount =%d\n\n",totaltr);
+	    printf("\n\n-------------THANKS-------------");
+}
